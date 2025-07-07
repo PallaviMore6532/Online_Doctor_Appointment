@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DoctorVm>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+    </div>
+</div>
+
+
+<a class="btn btn-success left-po" asp-action="Create"> Create New </a>
+
+<table class="table table-responsive table-bordered border-primary ">
+    <thead>
+        <tr>
+            <th> # </th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>MobileNo</th>
+            <th>IsAvailable</th>
+            <th>Address</th>
+            <th>DoctorExperiance</th>
+            <th>PhotoPath</th>
+            <th>DoctorQualification</th>
+            <th>Password</th>
+            <th>AreaName</th>
+            <th>Clinic Name</th>
+            <th>Visting Charges</th>
+            <th>doctorfacilitycount</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int srno = 1;
+        }
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <th scope="row">@srno</th>
+                <td>@temp.FirstName</td>
+                <td>@temp.LastName</td>
+                <td>@temp.MobileNo</td>
+                <td>@temp.IsAvailable</td>
+                <td>@temp.Address</td>
+                <td>@temp.DoctorExperiance</td>
+                <td>
+                    <img src="@temp.PhotoPath" width="50" height="60">
+                </td>
+                <td>@temp.DoctorQualification</td>
+                <td>@temp.Password</td>
+                <td>@temp.AreaName</td>
+                <td>@temp.ClinicName</td>
+               <td>@temp.VisitingCharges</td>
+                <td>@temp.doctorfacilitycount</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@temp.DoctorID" class="btn btn-primary"> Edit </a> |
+                    <a asp-action="Delete" asp-route-id="@temp.DoctorID" class="btn btn-danger"> Delete </a>
+
+                </td>
+            </tr>
+            srno++;
+        }
+    </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BookedAppointment>
+
+<table class="table table-bordered border-primary">
+	<thead>
+		<tr>
+			<th>SR NO</th>
+			<th>BookedAppointment ID</th>
+			<th>Appointment Date</th>
+			<th>Start Time</th>
+			<th>End Time</th>
+			<th>Patient ID</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		@{
+			int srno = 1;
+		}
+		@foreach (var temp in Model)
+		{
+			<tr>
+				<td>@srno</td>
+				<td>@temp.BookedAppointmentID</td>
+				<td>@temp.AppointmentDate</td>
+				<td>@temp.StartTime</td>
+				<td>@temp.EndTime</td>
+				<td>@temp.PatientID</td>
+			</tr>
+			srno++;
+		}
+	</tbody>
+</table>

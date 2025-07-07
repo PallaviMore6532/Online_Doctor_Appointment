@@ -1,0 +1,238 @@
+﻿@model Prescription
+
+<form asp-action="GeneratePrescription" method="post">
+	<div class="container">
+		<div class="col-md-12">
+			<div class="row">
+
+				<input type="hidden" asp-for="BookedAppointmentID" value="@Context.Session.GetString("BookedAppointmentID")" />
+				<input type="hidden" asp-for="DoctorID" value="@Context.Session.GetString("DoctorID")" />
+				<input type="hidden" asp-for="PatientID" value="@Context.Session.GetString("PatientID")" />
+				<input type="hidden" asp-for="PrescriptionDate" value="@DateTime.Now" />
+
+				<table>
+					<tr>
+						<td>Medicine Name</td>
+						<td>Qty</td>
+						<td>Dosage</td>
+						<td>Duration</td>
+						<td>Remark</td>
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+
+					<tr>
+						<td>
+							<select name="MedicineID" asp-items="@ViewBag.medicine">
+								<option>Select Medicine</option>
+							</select>
+						</td>
+
+						<td>
+							<input type="text" name="Qty" />
+						</td>
+
+						<td>
+							<input type="text" name="Dosage" />
+						</td>
+
+						<td>
+							<input type="text" name="Duration" />
+						</td>
+
+						<td>
+							<input type="text" name="Remark" />
+						</td>
+
+
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+	</div>
+	<div>
+		<input type="submit" value="save" />
+	</div>
+</form>

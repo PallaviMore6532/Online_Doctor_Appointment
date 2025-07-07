@@ -1,0 +1,51 @@
+﻿@model BookVM
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Booked Appointment</h2>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <td> Order Status </td>
+                <td> @Model.IsSuccess</td>
+            </tr>
+            <tr>
+                <td> Order Message </td>
+                <td> @Model.Message</td>
+            </tr>
+            <tr>
+                <td> PatientID</td>
+                <td> @Model.PatientID </td>
+            </tr>
+            <tr>
+                <td>start Time</td>
+                <td>@Model.StartTime</td>
+            </tr>
+            <tr>
+                <td> Appointment Date: </td>
+                <td> @Model.AppointmentDate </td>
+            </tr>
+            <tr>
+                <td> End Time </td>
+                <td> @Model.EndTime </td>
+            </tr>
+
+            <tr>
+                <td> Amount</td>
+                <td> @Model.Amount </td>
+            </tr>
+
+          
+        </table>
+
+        <a asp-action="success" class="btn btn-danger"> ok </a>
+
+    </div>
+</div>
+

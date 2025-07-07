@@ -1,0 +1,77 @@
+﻿@model UserSignUpVM
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@* <section class="regervation_part section_padding"> *@
+    <div class="container">
+        <div class="row align-items-center regervation_content">
+            <div class="col-lg-7">
+                <div class="regervation_part_iner">
+                <form asp-action="Signup" method="post">
+
+                    <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label asp-for="FirstName" class="Control-label"></label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label asp-for="LastName" class="control-label"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label asp-for="EmailID" class="control-label"></label>
+                                <input asp-for="EmailID" class="form-control" />
+                                <span asp-validation-for="EmailID" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label asp-for="MobileNo" class="control-label"></label>
+                                <input asp-for="MobileNo" class="form-control" />
+                                <span asp-validation-for="MobileNo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label asp-for="Address" class="control-label"></label>
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                          
+                            <div class="form-group col-sm-6">
+                                <label asp-for="CountryID" class="control-label"></label>
+                            <select asp-for="CountryID" asp-items="@ViewBag.Countries"></select>
+                                <span asp-validation-for="CountryID" class="text-danger"></span>
+                            </div>
+                           
+                            <div class="form-group col-sm-6">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label asp-for="ConfirmPassword" class="control-label"></label>
+                                <input asp-for="ConfirmPassword" class="form-control" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+
+                        <button class="btn_2" type="submit">Registration</button>
+
+                    </div>
+                    
+                     
+                       
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+@* </section> *@
+
+
+
+
+

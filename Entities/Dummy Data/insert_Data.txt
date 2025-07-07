@@ -1,0 +1,248 @@
+﻿INSERT INTO CountryTbl (CountryName)
+VALUES ('India'), ('USA'), ('UK'), ('Canada'), ('Germany'),
+       ('France'), ('Australia'), ('Japan'), ('Brazil'), ('South Africa');
+
+
+INSERT INTO StateTbl (StateName, CountryID)
+VALUES ('Maharashtra', 1), ('California', 2), ('London', 3), ('Ontario', 4), ('Bavaria', 5),
+       ('Île-de-France', 6), ('New South Wales', 7), ('Tokyo', 8), ('São Paulo', 9), ('Gauteng', 10);
+
+
+INSERT INTO CityTbl (CityName, StateID)
+VALUES ('Mumbai', 1), ('Los Angeles', 2), ('London City', 3), ('Toronto', 4), ('Munich', 5),
+       ('Paris', 6), ('Sydney', 7), ('Tokyo City', 8), ('São Paulo City', 9), ('Johannesburg', 10);
+
+INSERT INTO AreaTbl (AreaName, CityID)
+VALUES ('Andheri', 1), ('Hollywood', 2), ('Central London', 3), ('North York', 4), ('Schwabing', 5),
+       ('Montmartre', 6), ('Parramatta', 7), ('Shinjuku', 8), ('Pinheiros', 9), ('Sandton', 10);
+
+
+INSERT INTO UserTbl (FirstName, LastName, EmailID, MobileNo, Address, Password, CountryID)
+VALUES 
+('John', 'Doe', 'john.doe@example.com', '9999999991', '123 Lane', 'pass123', 1),
+('Jane', 'Smith', 'jane.smith@example.com', '9999999992', '456 Street', 'pass456', 2),
+('Mark', 'Taylor', 'mark.taylor@example.com', '9999999993', '789 Ave', 'pass789', 3),
+('Emily', 'Clark', 'emily.clark@example.com', '9999999994', '321 Blvd', 'pass321', 4),
+('David', 'Lee', 'david.lee@example.com', '9999999995', '654 Way', 'pass654', 5),
+('Sara', 'Khan', 'sara.khan@example.com', '9999999996', '987 Road', 'pass987', 6),
+('Chris', 'Brown', 'chris.brown@example.com', '9999999997', '159 Path', 'pass159', 7),
+('Amy', 'Wong', 'amy.wong@example.com', '9999999998', '753 Trail', 'pass753', 8),
+('Liam', 'Jones', 'liam.jones@example.com', '9999999999', '852 Circle', 'pass852', 9),
+('Emma', 'Wilson', 'emma.wilson@example.com', '9999999900', '951 Route', 'pass951', 10);
+
+INSERT INTO SpecilityTbl (SpecilityName)
+VALUES ('Cardiology'), ('Neurology'), ('Dermatology'), ('Pediatrics'), ('Orthopedics'),
+       ('ENT'), ('Psychiatry'), ('Gynecology'), ('Urology'), ('Radiology');
+
+INSERT INTO ClinicTbl (ClinicName, Address, EmailID, MobileNO, ContactPersonName, RegisterDate, LandLineNO, WebsiteUrl, Logopath, CityID)
+VALUES
+('LifeCare Clinic', '123 Health St', 'lifecare@example.com', '9876543210', 'Dr. Meera Shah', GETDATE(), '02012345678', 'www.lifecare.com', 'lifecare.png', 1),
+('CityMed Center', '456 Wellness Ave', 'citymed@example.com', '9876543211', 'Dr. Raj Patel', GETDATE(), '02012345679', 'www.citymed.com', 'citymed.png', 2),
+('HealthFirst', '789 Clinic Rd', 'healthfirst@example.com', '9876543212', 'Dr. Anjali Rao', GETDATE(), '02012345670', 'www.healthfirst.com', 'healthfirst.png', 3),
+('CureWell Hospital', '321 Hope Lane', 'curewell@example.com', '9876543213', 'Dr. Arvind Nair', GETDATE(), '02012345671', 'www.curewell.com', 'curewell.png', 4),
+('Apollo Care', '654 Relief Blvd', 'apollo@example.com', '9876543214', 'Dr. Priya Menon', GETDATE(), '02012345672', 'www.apollocare.com', 'apollo.png', 5),
+('Metro Clinic', '159 Urban Rd', 'metroclinic@example.com', '9876543215', 'Dr. Neha Jain', GETDATE(), '02012345673', 'www.metroclinic.com', 'metro.png', 6),
+('Sunrise Health', '753 Golden St', 'sunrise@example.com', '9876543216', 'Dr. Vivek Rana', GETDATE(), '02012345674', 'www.sunrise.com', 'sunrise.png', 7),
+('Family Care', '852 Trust Ave', 'familycare@example.com', '9876543217', 'Dr. Komal Seth', GETDATE(), '02012345675', 'www.familycare.com', 'family.png', 8),
+('Trust Hospital', '951 Safe Way', 'trust@example.com', '9876543218', 'Dr. Karan Singh', GETDATE(), '02012345676', 'www.trusthospital.com', 'trust.png', 9),
+('HopeMed', '369 Faith Rd', 'hopemed@example.com', '9876543219', 'Dr. Sneha Joshi', GETDATE(), '02012345677', 'www.hopemed.com', 'hope.png', 10);
+
+INSERT INTO DoctorTbl (FirstName, LastName, MobileNo, IsAvailable, Address, DoctorExperiance, PhotoPath, DoctorQualification, Password, AreaID, ClinicID, VisitingCharges)
+VALUES
+('Arjun', 'Desai', '9000000001', 1, 'Area 1', '5 years', 'arjun.jpg', 'MBBS, MD', 'pass1', 1, 1, 500),
+('Priya', 'Verma', '9000000002', 1, 'Area 2', '8 years', 'priya.jpg', 'MBBS', 'pass2', 2, 2, 400),
+('Rahul', 'Kapoor', '9000000003', 1, 'Area 3', '10 years', 'rahul.jpg', 'MBBS, MS', 'pass3', 3, 3, 600),
+('Sneha', 'Iyer', '9000000004', 0, 'Area 4', '6 years', 'sneha.jpg', 'MBBS', 'pass4', 4, 4, 450),
+('Karan', 'Reddy', '9000000005', 1, 'Area 5', '7 years', 'karan.jpg', 'MBBS, DNB', 'pass5', 5, 5, 550),
+('Divya', 'Patel', '9000000006', 1, 'Area 6', '9 years', 'divya.jpg', 'MBBS, MD', 'pass6', 6, 6, 500),
+('Rohan', 'Joshi', '9000000007', 1, 'Area 7', '4 years', 'rohan.jpg', 'MBBS', 'pass7', 7, 7, 400),
+('Nikita', 'Kumar', '9000000008', 0, 'Area 8', '3 years', 'nikita.jpg', 'MBBS', 'pass8', 8, 8, 300),
+('Vivek', 'Agarwal', '9000000009', 1, 'Area 9', '11 years', 'vivek.jpg', 'MBBS, MS', 'pass9', 9, 9, 700),
+('Pooja', 'Mehta', '9000000010', 1, 'Area 10', '2 years', 'pooja.jpg', 'MBBS', 'pass10', 10, 10, 350);
+
+INSERT INTO OPDSessionTbl (SessionName, ClinicID)
+VALUES
+('Morning', 1), ('Evening', 2), ('Afternoon', 3), ('Night', 4), ('Weekend', 5),
+('Holiday', 6), ('Emergency', 7), ('Full Day', 8), ('Late Night', 9), ('Regular', 10);
+
+INSERT INTO DcotorScheduleTbl (DayOfWeek, StartTime, EndTime, Interval, DoctorID, OPDSessionID)
+VALUES
+(1, '09:00', '11:00', 15, 1, 1),
+(2, '10:00', '12:00', 20, 2, 2),
+(3, '11:00', '13:00', 15, 3, 3),
+(4, '12:00', '14:00', 10, 4, 4),
+(5, '13:00', '15:00', 30, 5, 5),
+(6, '14:00', '16:00', 20, 6, 6),
+(7, '15:00', '17:00', 25, 7, 7),
+(1, '16:00', '18:00', 15, 8, 8),
+(2, '17:00', '19:00', 20, 9, 9),
+(3, '18:00', '20:00', 30, 10, 10);
+
+INSERT INTO PatientTbl (FirstName, LastName, Address, MobileNO, Gender, EmailID, PhotoPath, UserID, AppointmentDate)
+VALUES 
+('Ravi', 'Sharma', '123 Lake Rd', '9990001001', 'Male', 'ravi.sharma@example.com', 'ravi.jpg', 1, GETDATE()),
+('Sneha', 'Verma', '456 Green Ave', '9990001002', 'Female', 'sneha.verma@example.com', 'sneha.jpg', 2, GETDATE()),
+('Arjun', 'Mehta', '789 River St', '9990001003', 'Male', 'arjun.mehta@example.com', 'arjun.jpg', 3, GETDATE()),
+('Pooja', 'Nair', '321 Hill Rd', '9990001004', 'Female', 'pooja.nair@example.com', 'pooja.jpg', 4, GETDATE()),
+('Karan', 'Joshi', '654 Maple Blvd', '9990001005', 'Male', 'karan.joshi@example.com', 'karan.jpg', 5, GETDATE()),
+('Divya', 'Patel', '147 Palm St', '9990001006', 'Female', 'divya.patel@example.com', 'divya.jpg', 6, GETDATE()),
+('Vivek', 'Rao', '258 Oak Ln', '9990001007', 'Male', 'vivek.rao@example.com', 'vivek.jpg', 7, GETDATE()),
+('Neha', 'Kumar', '369 Pine Dr', '9990001008', 'Female', 'neha.kumar@example.com', 'neha.jpg', 8, GETDATE()),
+('Amit', 'Desai', '852 Birch Pl', '9990001009', 'Male', 'amit.desai@example.com', 'amit.jpg', 9, GETDATE()),
+('Anjali', 'Jain', '963 Cedar Rd', '9990001010', 'Female', 'anjali.jain@example.com', 'anjali.jpg', 10, GETDATE());
+
+INSERT INTO BookedAppointmentTbl (AppointmentDate, StartTime, EndTime, IsPaid, PatientID, DoctorScheduleID)
+VALUES
+(GETDATE(), '09:00', '09:15', 1, 1, 2),
+(GETDATE(), '10:00', '10:20', 0, 2, 3),
+(GETDATE(), '11:00', '11:15', 1, 3, 4),
+(GETDATE(), '12:00', '12:10', 1, 4, 5),
+(GETDATE(), '13:00', '13:30', 0, 5, 6),
+(GETDATE(), '14:00', '14:20', 1, 6, 7),
+(GETDATE(), '15:00', '15:25', 0, 7, 8),
+(GETDATE(), '16:00', '16:15', 1, 8, 9),
+(GETDATE(), '17:00', '17:20', 1, 9, 10),
+(GETDATE(), '18:00', '18:30', 0, 10, 11);
+
+INSERT INTO PrescriptionTbl (PrescriptionDate, BookedAppointmentID, DoctorID, PatientID)
+VALUES
+(GETDATE(), 6, 1, 1),
+(GETDATE(), 7, 2, 2),
+(GETDATE(), 8, 3, 3),
+(GETDATE(), 9, 4, 4),
+(GETDATE(), 10, 5, 5),
+(GETDATE(), 11, 6, 6),
+(GETDATE(), 12, 7, 7),
+(GETDATE(), 13, 8, 8),
+(GETDATE(), 14, 9, 9),
+(GETDATE(), 15, 10, 10);
+
+INSERT INTO MedicineTbl (MedicineName, MfgName, ExpDate, MfgDate, Price)
+VALUES
+('Paracetamol', 'Cipla', '2026-05-01', '2024-05-01', 20),
+('Amoxicillin', 'Sun Pharma', '2026-08-10', '2024-08-10', 50),
+('Ibuprofen', 'Zydus', '2026-01-15', '2024-01-15', 30),
+('Cetirizine', 'GSK', '2026-11-20', '2024-11-20', 15),
+('Azithromycin', 'Torrent', '2026-03-05', '2024-03-05', 60),
+('Pantoprazole', 'Lupin', '2026-06-30', '2024-06-30', 25),
+('Metformin', 'Biocon', '2026-09-12', '2024-09-12', 40),
+('Diclofenac', 'Intas', '2026-07-22', '2024-07-22', 35),
+('Ranitidine', 'Ranbaxy', '2026-04-18', '2024-04-18', 28),
+('Ciprofloxacin', 'Dr. Reddy''s', '2026-02-27', '2024-02-27', 55);
+
+INSERT INTO PrescriptionDetailTbl (Qty, Dosage, Duration, Remark, PrescriptionID, MedicineID)
+VALUES
+(1, 101, 5, 'Take after food', 11, 1),
+(2, 111, 3, 'With water', 2, 2),
+(1, 11, 7, 'No alcohol', 3, 3),
+(1, 100, 10, 'Take in morning', 4, 4),
+(2, 101, 5, 'Avoid milk', 5, 5),
+(1, 1, 3, 'At bedtime', 6, 6),
+(1, 110, 6, 'Before meals', 7, 7),
+(1, 101, 8, 'No sugar', 8, 8),
+(2, 10, 4, 'Morning only', 9, 9),
+(1, 111, 5, 'Take with food', 10, 10);
+
+INSERT INTO DoctorSpecialityTbl (DoctorID, SpecilityID)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 1),
+(7, 2),
+(8, 3),
+(9, 4),
+(10, 5);
+
+INSERT INTO DoctorRatingTbl (Rating, Remark, UserID, DoctorID)
+VALUES
+(5, 'Excellent service', 1, 1),
+(4, 'Very good doctor', 2, 2),
+(3, 'Good but needs improvement', 3, 3),
+(5, 'Highly recommended', 4, 4),
+(2, 'Not satisfied', 5, 5),
+(4, 'Friendly and helpful', 6, 6),
+(5, 'Best doctor in area', 7, 7),
+(3, 'Average experience', 8, 8),
+(4, 'Good care', 9, 9),
+(5, 'Outstanding', 10, 10);
+
+INSERT INTO DoctorClinicSessionTbl (StartTime, EndTime, TimeInterval, DoctorID, ClinicID, OPDSessionID)
+VALUES
+('09:00', '11:00', 15, 1, 1, 1),
+('10:00', '12:00', 20, 2, 2, 2),
+('11:00', '13:00', 30, 3, 3, 3),
+('12:00', '14:00', 15, 4, 4, 4),
+('13:00', '15:00', 20, 5, 5, 5),
+('14:00', '16:00', 30, 6, 6, 6),
+('15:00', '17:00', 15, 7, 7, 7),
+('16:00', '18:00', 20, 8, 8, 8),
+('17:00', '19:00', 25, 9, 9, 9),
+('18:00', '20:00', 30, 10, 10, 10);
+
+INSERT INTO ClinicRatingTbl (Rating, Remark, UserID, ClinicID)
+VALUES
+(5, 'Excellent care', 1, 1),
+(4, 'Very clean clinic', 2, 2),
+(3, 'Average experience', 3, 3),
+(5, 'Highly recommended', 4, 4),
+(2, 'Needs improvement', 5, 5),
+(4, 'Good facilities', 6, 6),
+(5, 'Prompt service', 7, 7),
+(3, 'Ok service', 8, 8),
+(4, 'Clean and quick', 9, 9),
+(5, 'Best clinic', 10, 10);
+
+INSERT INTO ClinicFacilityTbl (ClinicFacilityName, ClinicID)
+VALUES
+('X-Ray', 1),
+('Blood Test', 2),
+('ECG', 3),
+('Pharmacy', 4),
+('Ultrasound', 5),
+('MRI Scan', 6),
+('CT Scan', 7),
+('OPD Service', 8),
+('Ambulance', 9),
+('Health Checkup', 10);
+
+INSERT INTO ClinicCertificateTbl (ClinicID, CertificateName, CertificateDate, FilePath)
+VALUES
+(1, 'NABH Accreditation', '2024-01-10', 'cert1.pdf'),
+(2, 'ISO Certified', '2023-11-20', 'cert2.pdf'),
+(3, 'Govt. License', '2022-05-15', 'cert3.pdf'),
+(4, 'Medical Council Approval', '2023-08-01', 'cert4.pdf'),
+(5, 'Fire Safety Cert', '2022-12-10', 'cert5.pdf'),
+(6, 'Environmental Clearance', '2023-06-18', 'cert6.pdf'),
+(7, 'Bio-Waste License', '2022-09-25', 'cert7.pdf'),
+(8, 'Pollution Control', '2023-01-15', 'cert8.pdf'),
+(9, 'Building Stability', '2023-03-30', 'cert9.pdf'),
+(10, 'Govt. Renewal', '2024-02-12', 'cert10.pdf');
+
+INSERT INTO ClinicAdminTbl (FirstName, LastName, EmailID, MobileNo, Password, ClinicID)
+VALUES
+('Rahul', 'Sharma', 'rahul@clinic1.com', '9999990001', 'pass123', 1),
+('Sneha', 'Patil', 'sneha@clinic2.com', '9999990002', 'pass234', 2),
+('Kunal', 'Mehta', 'kunal@clinic3.com', '9999990003', 'pass345', 3),
+('Divya', 'Nair', 'divya@clinic4.com', '9999990004', 'pass456', 4),
+('Amit', 'Joshi', 'amit@clinic5.com', '9999990005', 'pass567', 5),
+('Neha', 'Rao', 'neha@clinic6.com', '9999990006', 'pass678', 6),
+('Ravi', 'Jain', 'ravi@clinic7.com', '9999990007', 'pass789', 7),
+('Pooja', 'Desai', 'pooja@clinic8.com', '9999990008', 'pass890', 8),
+('Vivek', 'Kumar', 'vivek@clinic9.com', '9999990009', 'pass901', 9),
+('Anjali', 'Verma', 'anjali@clinic10.com', '9999990010', 'pass012', 10);
+
+INSERT INTO AdminTbl (FirstName, LastName, Address, EmailID, Password)
+VALUES
+('Super', 'Admin', 'Admin HQ', 'admin1@system.com', 'admin123'),
+('Pooja', 'Kumar', 'Branch 1', 'admin2@system.com', 'admin234'),
+('Ravi', 'Mehta', 'Branch 2', 'admin3@system.com', 'admin345'),
+('Sneha', 'Joshi', 'Branch 3', 'admin4@system.com', 'admin456'),
+('Amit', 'Desai', 'Branch 4', 'admin5@system.com', 'admin567'),
+('Neha', 'Verma', 'Branch 5', 'admin6@system.com', 'admin678'),
+('Karan', 'Nair', 'Branch 6', 'admin7@system.com', 'admin789'),
+('Divya', 'Sharma', 'Branch 7', 'admin8@system.com', 'admin890'),
+('Rahul', 'Jain', 'Branch 8', 'admin9@system.com', 'admin901'),
+('Vivek', 'Rao', 'Branch 9', 'admin10@system.com', 'admin012');

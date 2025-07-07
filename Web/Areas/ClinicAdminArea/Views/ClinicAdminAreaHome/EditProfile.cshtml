@@ -1,0 +1,36 @@
+﻿@model EditProfileVM
+<form asp-action="EditProfile" method="post">
+    <div class="text-danger" asp-validation-summary="ModelOnly">
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="FirstName" class="col-md-4 col-lg-3 col-form-label"></label>
+        <div class="col-md-8 col-lg-9">
+            <input class="form-control" asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="LastName" class="col-md-4 col-lg-3 col-form-label"></label>
+        <div class="col-md-8 col-lg-9">
+            <input class="form-control" asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+    </div>
+
+   
+
+    <div class="row mb-3">
+        <label asp-for="MobileNo" class="col-md-4 col-lg-3 col-form-label">MobileNo</label>
+        <div class="col-md-8 col-lg-9">
+            <input class="form-control" asp-for="MobileNo" />
+        </div>
+    </div>
+
+
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>

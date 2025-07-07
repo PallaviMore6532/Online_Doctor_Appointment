@@ -1,0 +1,28 @@
+﻿@model PaymentGatewayVM
+<br /><br /><br /><br /><br />
+<h2> Welcome to Payment Gateway </h2>
+<form asp-action="PaymentGateway" method="post">
+    <table>
+        <tr>
+            <td> Cart No:</td>
+            <td>
+                <input asp-for="CardNo" />
+            </td>
+        </tr>
+        <tr>
+            <td>Expiry Date</td>
+            <td>
+                <input asp-for="ExpiryDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>CVV </td>
+            <td>
+                <input asp-for="CVVCode" />
+            </td>
+        </tr>
+        <tr>
+            <td> <input type="submit" value="MakePayment" /> </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,18 @@
+﻿<div>
+    <br /><br /><br /><br />
+    <tr class="alert-warning">
+        <td> Payment Mode:  </td>
+        <td>
+            <form asp-action="FinalBook" asp-controller="Payment" method="post">
+                <select name="PaymentMode" asp-items="@Html.GetEnumSelectList<PaymentModeEnum>()">
+                </select>
+              
+                <input type="submit" value="Make Payment " class="btn btn-success" />
+            </form>
+        </td>
+    </tr>
+
+    <a asp-action ="AddPatient" asp-controller="Home" class="btn btn-primary">
+           Back
+    </a>
+</div>

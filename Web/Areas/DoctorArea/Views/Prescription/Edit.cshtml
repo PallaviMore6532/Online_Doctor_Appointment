@@ -1,0 +1,72 @@
+﻿@model PrescriptionDetail
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Patient Medicine</h4>
+
+            <form class="forms-sample" asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+                <input type="hidden" asp-for="PrescriptionDetailID" />
+                <input type="hidden" asp-for="PrescriptionID" value="@Context.Session.GetString("PrescriptionID")" />
+             
+
+                <div class="form-group row">
+                    <label asp-for="Qty" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Qty" class="form-control  border-dark" placeholder="name">
+                        <span asp-validation-for="Qty" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Dosage" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Dosage" class="form-control  border-dark" placeholder="name">
+                        <span asp-validation-for="Dosage" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Duration" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Duration" class="form-control border-dark" placeholder="name">
+                        <span asp-validation-for="Duration" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Remark" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Remark" class="form-control border-dark" placeholder="name">
+                        <span asp-validation-for="Remark" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Select Medicine</label>
+                    <select class="form-control  border-dark" fdprocessedid="3v6q0k" asp-for="MedicineID" asp-items="@ViewBag.medicine">
+                        <option>select Medicine</option>
+
+                    </select>
+                    <span asp-validation-for="MedicineID" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-check form-check-flat form-check-primary">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember me
+                        <i class="input-helper"></i>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Edit</button>
+                <button class="btn btn-light" asp-action="Index">Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+

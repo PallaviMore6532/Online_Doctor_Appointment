@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PrescriptionDetail>
+
+@* <form asp-action="GeneratePrescription" method="post">
+	<div class="container">
+		<div class="col-xl-auto">
+			<div class="row">
+
+ *@
+
+				<table class="table table-bordered border-primary">
+					<tr>
+						<td>Medicine Name</td>
+						<td>Qty</td>
+						<td>Dosage</td>
+						<td>Duration</td>
+						<td>Remark</td>
+					</tr>
+
+					@foreach (var temp in Model)
+					{
+						<tr>
+							<td>@temp.Medicine.MedicineName</td>
+							<td>@temp.Qty</td>
+							<td>@temp.Dosage</td>
+							<td>@temp.Duration</td>
+							<td>@temp.Remark</td>
+
+							<td>
+								<a asp-action="Edit" asp-route-id="@temp.PrescriptionDetailID" asp-route-pid="@temp.PrescriptionID"class="btn btn-primary"> Edit Medicine </a> 
+								
+
+							</td>
+
+						</tr>
+					}
+
+				
+
+
+				</table>
+		@* 	</div>
+
+		</div>
+
+	</div>
+	<div>
+	
+	</div>
+</form> *@
+
+

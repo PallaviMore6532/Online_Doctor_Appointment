@@ -1,0 +1,46 @@
+﻿@model Patient
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+
+        <p>Patientid:@Context.Session.GetString("PatientID")</p>
+        <p>First Name:@Model.FirstName</p>
+        <p>Last Name:@Model.LastName</p>
+        <p>Address:@Model.Address</p>
+        <p>Gender:@Model.Gender</p>
+        <p>
+            Photo:
+            <img src="@Model.PhotoPath" width="50" height="60">
+        </p>
+        <p>User ID:@Model.UserID</p>
+
+        <a asp-action="GeneratePrescription" asp-controller="Prescription" class="btn btn-primary"> Generate Prescription </a>
+
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

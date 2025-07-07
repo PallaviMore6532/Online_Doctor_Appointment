@@ -1,0 +1,47 @@
+﻿<div class="container">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+
+
+            <button class="nav-link" data-toggle="tab" href="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Today</button>
+        </li>
+
+
+        <li>
+
+            <button class="nav-link" data-toggle="tab" href="#menu1" type="button" role="tab" aria-controls="home" aria-selected="true">Tomorrow</button>
+        </li>
+
+        <li>
+
+            <button class="nav-link" data-toggle="tab" href="#menu2" type="button" role="tab" aria-controls="home" aria-selected="true">Day After</button>
+        </li>
+
+
+
+
+
+    </ul>
+
+
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active show">
+            <h2>Today All Appointment</h2>
+            @await Component.InvokeAsync("UserTodayAppointmentVC")
+
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h2>Tomorrow All Appointment</h2>
+            @await Component.InvokeAsync("UserTomorrowAppointmentVC")
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h2>Remaining all Appointment</h2>
+            @await Component.InvokeAsync("UserDayAfterTomorrowAppointmentVC")
+        </div>
+
+
+
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Area>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+    </div>
+</div>
+
+
+<a class="btn btn-success left-po" asp-action="Create"> Create New </a>
+
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+
+            <th> # </th>
+            <th>Area Name</th>
+            <th>City Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int srno = 1;
+        }
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <td scope="row">@srno</td>
+                <td>@temp.AreaName</td>
+                <td>@temp.City.CityName</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@temp.AreaID" class="btn btn-primary"> Edit </a> |
+                    <a asp-action="Delete" asp-route-id="@temp.AreaID" asp-route-cid="@temp.CityID" class="btn btn-danger"> Delete </a>
+
+                </td>
+            </tr>
+            srno++;
+        }
+    </tbody>
+</table>
+

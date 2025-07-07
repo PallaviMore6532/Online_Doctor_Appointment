@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ClinicRating>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th> # </th>
+          
+            <th>Clinic Name</th>
+            <th>Remark</th>
+            <th>User Name</th>
+            <th>Rating</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int srno = 1;
+        }
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <th scope="row">@srno</th>
+              
+                <td>@temp.Clinic.ClinicName</td>
+                <td>@temp.Remark</td>
+                <td>@temp.User.UserFullName</td>
+                <td>@temp.Rating</td>
+
+                <td>
+                  
+                    <a asp-action="Delete" asp-route-id="@temp.ClinicRatingID" class="btn btn-danger"> Delete </a>
+
+                </td>
+            </tr>
+            srno++;
+        }
+    </tbody>
+</table>
+
+

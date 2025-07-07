@@ -1,0 +1,40 @@
+﻿@model ClinicRating
+
+<br />
+<br />
+<br />
+<br />
+<form asp-action="AddRating" method="post" >
+
+    <input type="hidden" asp-for="ClinicID"  value="@Context.Session.GetString("ClinicID")"    />
+    
+
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Select Rating</label>
+        <select class="form-control  border-dark" fdprocessedid="3v6q0k" asp-for="Rating" >
+            <option>select Rating</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Remark" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <input asp-for="Remark" class="form-control col-sm-7 border-dark"  placeholder="add Rating">
+            <span asp-validation-for="Remark" class="text-danger"></span>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="UserID"  value="@Context.Session.GetString("UserID")">
+
+    <button type="submit" class="btn btn-primary mr-2">Add Rating</button>
+   
+</form>
+

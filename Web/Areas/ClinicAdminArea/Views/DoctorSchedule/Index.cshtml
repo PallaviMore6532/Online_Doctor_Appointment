@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DoctorSpeciality>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+    </div>
+</div>
+
+
+<a class="btn btn-success" asp-action="Create" asp-controller="DoctorSchedule">Create New</a>
+
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th> # </th>
+            <th>Doctor Name</th>
+            <th>Doctor Speciality</th>
+       
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int srno = 1;
+        }
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <th scope="row">@srno</th>
+                <td>@temp.Doctor.FirstName</td>
+                <td>@temp.Specility.SpecilityName</td>
+                
+              
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@temp.DoctorID" class="btn btn-primary"> Edit </a> |
+                    <a asp-action="Delete" asp-route-id="@temp.DoctorID" class="btn btn-danger"> Delete </a>
+
+                </td>
+            </tr>
+            srno++;
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,45 @@
+﻿@model ClinicCertificate
+
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create State</h4>
+
+            <form class="forms-sample" asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+                <div class="form-group row">
+                    <label asp-for="CertificateName" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="CertificateName" class="form-control  border-dark" placeholder="name">
+                        <span asp-validation-for="CertificateName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="CertificateDate" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="CertificateDate" class="form-control  border-dark" placeholder="name">
+                        <span asp-validation-for="CertificateDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+              @*   <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Select Clinic</label>
+                    <select class="form-control  border-dark" fdprocessedid="3v6q0k" asp-for="ClinicID" asp-items="@ViewBag.Clinic">
+                        <option>select Clinic</option>
+                       
+                    </select>
+                    <span asp-validation-for="ClinicID" class="text-danger"></span>
+
+                </div> *@
+
+              
+                <button type="submit" class="btn btn-primary mr-2">Create</button>
+                <button class="btn btn-light" asp-action="Index">Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+

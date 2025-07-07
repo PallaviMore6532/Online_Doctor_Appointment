@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Patient>
+
+<table class="table table-bordered border-primary">
+	<thead>
+		<tr>
+			<th>Patient ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Address</th>
+			<th>Mobile NO</th>
+			<th>Gender</th>
+			<th>EmailID</th>
+			<th>PhotoPath</th>
+			@* <th>User ID</th> *@
+		</tr>
+	</thead>
+
+	<tbody>
+
+		@{
+			int srno = 1;
+		}
+		@foreach (var temp in Model)
+		{
+			<tr>
+				<td>@srno</td>
+				<td>@temp.FirstName</td>
+				<td>@temp.LastName</td>
+				<td>@temp.Address</td>
+				<td>@temp.MobileNO</td>
+				<td>@temp.Gender</td>
+				<td>@temp.EmailID</td>
+				<td>
+					<img src="@temp.PhotoPath" width="50" height="60">
+				</td>
+				@* <td>@temp.UserID</td>
+ *@
+
+				<td>
+			<a asp-action="Edit" asp-route-id="@temp.PatientID"  class="btn btn-primary"> Edit </a> 
+			
+			</td>
+			</tr>
+			srno++;
+		}
+	</tbody>
+</table>

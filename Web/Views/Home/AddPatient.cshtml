@@ -1,0 +1,95 @@
+﻿@model Patient
+
+<br />
+<br />
+<br />
+<br />
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Patient Info</h4>
+          
+            <form class="forms-sample" asp-action="AddPatient" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+
+                
+                <div class="form-group row">
+                    <label asp-for="FirstName" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="FirstName" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="LastName" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="LastName" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Address" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Address" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="MobileNO" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="MobileNO" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="MobileNO" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Gender" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Gender" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Photo" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Photo" type="file" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="UserID" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="UserID" class="form-control  border-dark" placeholder="" value="@Context.Session.GetString("UserID")">
+                        <span asp-validation-for="UserID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="AppointmentDate" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="AppointmentDate" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="EmailID" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="EmailID" class="form-control  border-dark" placeholder="">
+                        <span asp-validation-for="EmailID" class="text-danger"></span>
+                    </div>
+                </div>
+
+              
+                <button type="submit" class="btn btn-primary mr-2">Make Payment</button>
+                <button class="btn btn-light" asp-action="index" asp-controller="Home">Back</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model Country
+
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Country</h4>
+
+            <form class="forms-sample" asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+                <input type="hidden" asp-for="CountryID" />
+                <div class="form-group row">
+                    <label asp-for="CountryName" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="CountryName" class="form-control  border-dark" placeholder="name">
+                        <span asp-validation-for="CountryName"></span>
+                    </div>
+                </div>
+
+              
+                <button type="submit" class="btn btn-primary mr-2">Edit</button>
+                <button class="btn btn-light" asp-action="Index">Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+

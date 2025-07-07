@@ -1,0 +1,45 @@
+﻿@model DoctorSchedule
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+<div style="border:dashed">
+         <input type="hidden" asp-for="Doctor.ClinicID" />
+        <p>DoctorScheduleid:@Context.Session.GetString("DoctorScheduleID")</p>
+        <p>Day of Week:@Model.DayOfWeek.ToString()</p>
+        <p>Start Time:@Model.StartTime</p>
+        <p>End Time:@Model.EndTime</p>
+        <p>Interval:@Model.Interval</p>
+        <p>Opd Session:@Model.OpdSession.SessionName</p>
+        <p>Doctor Visiting Charges:@Context.Session.GetString("VisitingCharges")</p>
+
+        <a asp-action="AddPatient" asp-controller="Home" class="btn btn-primary"> Add Patient </a>
+        <a asp-action="BookAppointment" asp-controller="Home" asp-route-id="@Model.Doctor.ClinicID" class="btn btn-primary"> Back </a>
+</div>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+     

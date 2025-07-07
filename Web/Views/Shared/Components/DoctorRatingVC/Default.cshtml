@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DoctorRating>
+
+	<table class="table table-bordered border-primary">
+		<thead>
+		   <tr>
+			@* <th>Doctor RatingID</th> *@
+			<th>SR NO</th>
+			<th>Rating</th>
+			<th>User Name</th>
+			<th>Doctor Name</th>
+		    <th>Remark</th>
+	       </tr>
+		</thead>
+
+		<tbody>
+
+		@{
+			int srno = 1;
+		}
+			@foreach(var temp in Model)
+			{
+			<tr>
+				@* <td>@temp.DoctorRatingID</td> *@
+				<td>@srno</td>
+				<td>@temp.Rating</td>
+				<td>@temp.User.UserFullName</td>
+				<td>@temp.Doctor.FirstName</td>
+				<td>@temp.Remark</td>
+		
+
+			@* 	<td>
+					<a asp-action="CreatePrescription" asp-controller="Prescription" asp-area="DoctorArea" asp-route-id="@temp.PatientID" asp-route-bid="@temp.BookedAppointmentID" class="btn btn-primary"> Create Prescription </a> |
+					<a asp-action="PatientMedicine" asp-controller="Prescription" asp-area="DoctorArea" asp-route-id="@temp.PatientID"  class="btn btn-danger"> Patient Medicine </a>
+
+				</td> *@
+			</tr>
+
+			srno++;
+		}
+		</tbody>
+	</table>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ClinicRating>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+    </div>
+</div>
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th> # </th>
+           
+            <th>User Name</th>
+            <th>Rating</th>
+            <th>Remark</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            int srno = 1;
+        }
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <th scope="row">@srno</th>
+                <td>@temp.User.UserFullName</td>
+                <td>@temp.Rating</td>
+                <td>@temp.Remark</td>
+
+              
+            </tr>
+            srno++;
+        }
+    </tbody>
+</table>
+
