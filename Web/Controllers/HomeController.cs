@@ -1,15 +1,8 @@
-﻿using Entities;
+﻿using Core;
 using Entities.Repositories.Interfaces;
-using Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Security.Cryptography;
-using System.Collections.Generic;
 using Web.CustFilters;
-using Core;
-using System.Numerics;
-using NuGet.Packaging.Signing;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Web.Controllers
 {
@@ -49,8 +42,6 @@ namespace Web.Controllers
             ViewBag.aname = new SelectList(this.repo.GetAll(), "AreaID", "AreaName");
             ViewBag.cname = new SelectList(this.crepo.GetAll(), "ClinicID", "ClinicName");
             ViewBag.sname = new SelectList(this.srepo.GetAll(), "SpecilityID", "SpecilityName");
-
-
             return View(this.crepo.GetAll());
           
         }
@@ -64,33 +55,22 @@ namespace Web.Controllers
             //if (aname == 0 && sname == 0)
             if(aname != 0 && sname !=0)
             {
-
               //  var v = this.crepo.GetAll();
                 var v=this.crepo.GetClinicdetail(aname, sname);
                 return View("Index",v.ToList());
 
             }
-
-
-
-
-
             else
             {
                 var v = this.crepo.GetAll();
                // var v = this.crepo.GetAll().Where(p => p.ClinicID == aname && p.ClinicID == sname);
                 return View("Index", v.ToList());
             }
-
-
-
         }
 
         [HttpGet]
         public IActionResult BookAppointment(Int64 id)
         {
-           
-           
             var v1 = this.dsrepo.getdocbyclinicnew(id);
             return View(v1.ToList());
         }
@@ -99,15 +79,15 @@ namespace Web.Controllers
         public IActionResult BookSchedule(Int64 id) 
         {
            
-                var doctor = this.drepo.getbyDoctorid(id);
-                var v = this.dschedule.getdoctorschedulebydoctorid(id);
-               // var v1 = this.dschedule.getbyDoctorscheduleid(id);
-                //session created for doctor visiting charges fees
-                HttpContext.Session.SetString("VisitingCharges", doctor.VisitingCharges.ToString());
-                HttpContext.Session.SetString("DoctorScheduleID", v.DoctorScheduleID.ToString());
-                return View(v);
-          
-            
+            var doctor = this.drepo.getbyDoctorid(id);
+            var v = this.dschedule.getdoctorschedulebydoctorid(id);
+            var clinic = this.dschedule.getclinincbyDoctororid(id);
+            // var v1 = this.dschedule.getbyDoctorscheduleid(id);
+            //session created for doctor visiting charges fees
+            HttpContext.Session.SetString("VisitingCharges", doctor.VisitingCharges.ToString());
+            HttpContext.Session.SetString("DoctorScheduleID", v.DoctorScheduleID.ToString());
+            HttpContext.Session.SetString("ClinicID", clinic.ClinicID.ToString());
+            return View(v);
         }
 
         [UserAuth]
@@ -134,12 +114,6 @@ namespace Web.Controllers
             //               var v = this.pinfo.getbyPatientID(rec.PatientID);
             //               HttpContext.Session.SetString("PatientID", v.PatientID.ToString());
             //HttpContext.Session.SetString("AppointmentDate", v.AppointmentDate.ToString());
-
-
-
-
-
-
             //  }
             //  return RedirectToAction("MakePayment", "Payment");
 
@@ -178,16 +152,6 @@ namespace Web.Controllers
                 return View(rec);
             }
 
-        
-       
-           
-
-
-
-
-          
-           
-
         }
 
         [HttpGet]
@@ -209,13 +173,5 @@ namespace Web.Controllers
            this.drating.Add(rec);
             return RedirectToAction("Index", "Home");
         }
-
-
-
-
-
-
-
-
     }
 }

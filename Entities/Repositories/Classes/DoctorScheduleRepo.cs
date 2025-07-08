@@ -1,11 +1,6 @@
 ﻿using Core;
 using Entities.Repositories.Interfaces;
 using Entities.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities.Repositories.Classes
 {
@@ -118,10 +113,14 @@ namespace Entities.Repositories.Classes
             return this.repo.DoctorSchedules.FirstOrDefault(d => d.DoctorID == doctorid);
         }
 
+        public Doctor getclinincbyDoctororid(long doctorid)
+        {
+            return this.repo.Doctors.FirstOrDefault(d => d.DoctorID == doctorid);
+        }
 
 
 
 
-      
+
     }
 }

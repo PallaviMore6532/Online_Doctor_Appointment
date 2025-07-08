@@ -1,28 +1,41 @@
 ﻿@model PaymentGatewayVM
-<br /><br /><br /><br /><br />
-<h2> Welcome to Payment Gateway </h2>
-<form asp-action="PaymentGateway" method="post">
-    <table>
-        <tr>
-            <td> Cart No:</td>
-            <td>
-                <input asp-for="CardNo" />
-            </td>
-        </tr>
-        <tr>
-            <td>Expiry Date</td>
-            <td>
-                <input asp-for="ExpiryDate" />
-            </td>
-        </tr>
-        <tr>
-            <td>CVV </td>
-            <td>
-                <input asp-for="CVVCode" />
-            </td>
-        </tr>
-        <tr>
-            <td> <input type="submit" value="MakePayment" /> </td>
-        </tr>
-    </table>
-</form>
+@{
+    ViewData["Title"] = "Payment Gateway";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-primary">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">Secure Payment Gateway</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="PaymentGateway" method="post">
+                        <div class="mb-3">
+                            <label asp-for="CardNo" class="form-label">Card Number</label>
+                            <input asp-for="CardNo" class="form-control" placeholder="1234 5678 9012 3456" />
+                            <span asp-validation-for="CardNo" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ExpiryDate" class="form-label">Expiry Date</label>
+                            <input asp-for="ExpiryDate" type="month" class="form-control" />
+                            <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CVVCode" class="form-label">CVV</label>
+                            <input asp-for="CVVCode" class="form-control" placeholder="123" />
+                            <span asp-validation-for="CVVCode" class="text-danger"></span>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success w-100">Make Payment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
