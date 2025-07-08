@@ -1,37 +1,56 @@
 ﻿@model DoctorSchedule
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doctor Schedule Details</title>
+    <link rel="stylesheet" href="~/frontendassets/css/bootstrap.min.css" />
 </head>
 <body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-<div style="border:dashed">
-         <input type="hidden" asp-for="Doctor.ClinicID" />
-        <p>DoctorScheduleid:@Context.Session.GetString("DoctorScheduleID")</p>
-        <p>Day of Week:@Model.DayOfWeek.ToString()</p>
-        <p>Start Time:@Model.StartTime</p>
-        <p>End Time:@Model.EndTime</p>
-        <p>Interval:@Model.Interval</p>
-        <p>Opd Session:@Model.OpdSession.SessionName</p>
-        <p>Doctor Visiting Charges:@Context.Session.GetString("VisitingCharges")</p>
+    <div class="container mt-5">
+        <div class="card shadow-sm border-info">
+            <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Doctor Schedule Details</h4>
+                @*   <a asp-action="GetDoctorSpeciality" asp-controller="Home" class="btn btn-light btn-sm">← Back</a> *@
+                <a asp-action="BookAppointment"
+                   asp-controller="Home"
+                   asp-route-id="@Context.Session.GetString("ClinicID")"
+                   class="btn btn-secondary">
+                    ← Back
+                </a>
 
-        <a asp-action="AddPatient" asp-controller="Home" class="btn btn-primary"> Add Patient </a>
-        <a asp-action="BookAppointment" asp-controller="Home" asp-route-id="@Model.Doctor.ClinicID" class="btn btn-primary"> Back </a>
-</div>
-  
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Doctor Schedule ID</dt>
+                    <dd class="col-sm-8">@Context.Session.GetString("DoctorScheduleID")</dd>
+
+                    <dt class="col-sm-4">Day of Week</dt>
+                    <dd class="col-sm-8">@Model.DayOfWeek.ToString()</dd>
+
+                    <dt class="col-sm-4">Start Date</dt>
+                    <dd class="col-sm-8">@Model.StartTime</dd>
+
+                    <dt class="col-sm-4">End Date</dt>
+                    <dd class="col-sm-8">@Model.EndTime</dd>
+
+                    <dt class="col-sm-4">Interval (minutes)</dt>
+                    <dd class="col-sm-8">@Model.Interval</dd>
+
+                    <dt class="col-sm-4">OPD Session</dt>
+                    <dd class="col-sm-8">@Model.OpdSession?.SessionName</dd>
+
+                    <dt class="col-sm-4">Doctor Visiting Charges</dt>
+                    <dd class="col-sm-8">₹@Context.Session.GetString("VisitingCharges")</dd>
+                </dl>
+            </div>
+            <div class="card-footer text-end">
+                <a asp-action="AddPatient" asp-controller="Home" class="btn btn-primary">Book Appointment</a>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
 
 
@@ -39,7 +58,3 @@
 
 
 
-
-
-
-     

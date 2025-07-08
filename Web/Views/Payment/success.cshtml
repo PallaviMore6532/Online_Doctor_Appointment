@@ -1,16 +1,12 @@
-﻿<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
-<h2>Booked Appointment Successfully</h2>
-
-<a class="btn btn-light" asp-action="index" asp-controller="Home">
-	 Back To Home
-</a>
+﻿<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="alert alert-success text-center shadow-lg p-5">
+                <h3 class="mb-3">✅ Appointment Successfully Booked</h3>
+                <p class="lead">Thank you for using our service. Your appointment has been scheduled successfully.</p>
+              @*   <p class="text-muted">A confirmation email and SMS will be sent shortly.</p> *@
+                <a asp-action="Index" asp-controller="Home" class="btn btn-primary mt-3">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>

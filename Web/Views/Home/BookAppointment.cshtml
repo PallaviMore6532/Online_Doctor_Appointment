@@ -1,57 +1,50 @@
-﻿
-@model IEnumerable<DoctorSpeciality>
+﻿@model IEnumerable<DoctorSpeciality>
 
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="text-primary">Doctor Specialities & Booking</h3>
+        <a class="btn btn-secondary" asp-action="BookAppointment" asp-controller="Home">← Back</a>
+    </div>
 
-
-
-
-<table class="table table-bordered border-primary">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Doctor Name</th>
-            <th>Visiting Charges</th>
-            <th>Doctor Speciality</th>
-           
-
-        </tr>
-    </thead>
-    <tbody>
-
-        @{
-            int srno = 1;
-        }
-        @foreach (var temp in Model)
-        {
-            <tr>
-                <th scope="row">@srno</th>
-                <td>@temp.Doctor.FirstName</td>
-                <td>@temp.Doctor.VisitingCharges</td>
-                <td>@temp.Specility.SpecilityName</td>
-
-                <td>
-                    <a asp-action="BookSchedule" asp-controller="Home" asp-route-id="@temp.DoctorID" class="btn btn-primary" asp-route-id="@temp.DoctorID"> Book Schedule </a>
-                    <a asp-action="DoctorRating" asp-controller="Home" asp-route-id="@temp.DoctorID" class="btn btn-primary" asp-route-cid="@temp.Doctor.ClinicID"> Doctor Rating </a>
-                  
-
-
-                </td>
-
-               
-            </tr>
-            srno++;
-        }
-        <tr>
-            <td rowspan="3">
-                <a asp-action="index" asp-controller="Home" class="btn btn-primary"> Back </a>
-            </td>
-        
-        </tr>
-    </tbody>
-</table>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered shadow-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Doctor Name</th>
+                    <th>Visiting Charges</th>
+                    <th>Doctor Speciality</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var temp in Model)
+                    {
+                        <tr>
+                            <td>@temp.DoctorID</td>
+                            <td>@temp.Doctor.FirstName</td>
+                            <td>₹@temp.Doctor.VisitingCharges</td>
+                            <td>@temp.Specility.SpecilityName</td>
+                            <td>
+                                <a asp-action="BookSchedule"
+                                   asp-controller="Home"
+                                   asp-route-id="@temp.DoctorID"
+                                   class="btn btn-success btn-sm">
+                                    Book Schedule
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No doctors found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
